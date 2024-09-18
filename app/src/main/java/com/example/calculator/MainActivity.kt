@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var result: EditText
+    private lateinit var calculatorIcon: ImageView
     private var operand1: Double = 0.0
     private var operand2: Double = 0.0
     private var operator: String = ""
@@ -17,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         result = findViewById(R.id.result)
+        calculatorIcon = findViewById(R.id.calculator_icon)
+
+        // Set the custom calculator icon
+        calculatorIcon.setImageResource(R.drawable.custom_calculator_icon)
 
         // Set click listeners for number buttons
         for (i in 0..9) {
